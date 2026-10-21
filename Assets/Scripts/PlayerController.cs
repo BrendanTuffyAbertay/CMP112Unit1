@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-	public float moveSpeed;
+	public float acceleration;
 	public float jumpStrength;
 	public float groundedDistance;
 	public float amountOfCoyoteTime;
+	public float maxSpeed;
 	
 	private Vector3 moveDir;
 	private Rigidbody rb;
@@ -52,7 +53,14 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate()
 	{
-		// Move
-		rb.AddForce(moveDir * moveSpeed);
+		var attemptedMove = moveDir * acceleration;
+		rb.AddForce(attemptedMove);
+		// Add counterforce if going too fast
+
+		if (rb.linearVelocity.magnitude > maxSpeed)
+		{
+			rb.AddForce(-attemptedMove);
+		}
+		
 	}
 }
