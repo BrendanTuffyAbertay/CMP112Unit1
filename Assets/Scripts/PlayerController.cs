@@ -3,9 +3,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 	public float moveSpeed;
+	public float jumpStrength;
 	
 	private Vector3 moveDir;
 	private Rigidbody rb;
+	private bool jumping = false;
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
 	{
@@ -14,6 +16,7 @@ public class PlayerController : MonoBehaviour
 
 	void Update()
 	{
+		// Get move dir
 		moveDir = new Vector3();
 		if (Input.GetKey(KeyCode.W))
 		{
@@ -35,12 +38,18 @@ public class PlayerController : MonoBehaviour
 		{
 			moveDir.Normalize();
 		}
+		
+		// Get jump
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			rb.AddForce(0, jumpStrength, 0);
+		};
 	}
 
 	// Update is called once per frame
 	void FixedUpdate()
 	{
-		Debug.Log(moveDir * moveSpeed);
-		rb.AddForce(moveDir * moveSpeed );
+		// Move
+		rb.AddForce(moveDir * moveSpeed);
 	}
 }
