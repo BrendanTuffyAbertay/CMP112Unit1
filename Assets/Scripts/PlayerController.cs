@@ -11,13 +11,14 @@ public class PlayerController : MonoBehaviour
 	private Vector3 moveDir;
 	private Rigidbody rb;
 	private bool grounded = true;
-	private float lastGroundedTime;
-	private bool hasJumped;
+	private float lastGroundedTime = 0f;
+	private bool hasJumped = false;
 	
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
 	{
 		rb = GetComponent<Rigidbody>();
+		lastGroundedTime = Time.time;
 	}
 
 	void Update()
@@ -43,8 +44,11 @@ public class PlayerController : MonoBehaviour
 		}
 
 		// Get jump
-		if (Input.GetKeyDown(KeyCode.Space) && amountOfCoyoteTime < Time.time - lastGroundedTime && !hasJumped)
-		{
+		if (
+			Input.GetKeyDown(KeyCode.Space) &&
+			amountOfCoyoteTime > Time.time - lastGroundedTime && 
+			!hasJumped
+		) {
 			rb.AddForce(0, jumpStrength, 0);
 			hasJumped = true;
 		};
@@ -57,7 +61,7 @@ public class PlayerController : MonoBehaviour
 		rb.AddForce(attemptedMove);
 		// Add counterforce if going too fast
 
-		if (rb.linearVelocity.magnitude > maxSpeed)
+		if (new Vector2(rb.linearVelocity.x, rb.linearVelocity.z).magnitude > maxSpeed)
 		{
 			rb.AddForce(-attemptedMove);
 		}
