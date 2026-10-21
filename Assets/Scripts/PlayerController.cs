@@ -5,10 +5,13 @@ public class PlayerController : MonoBehaviour
 	public float moveSpeed;
 	public float jumpStrength;
 	public float groundedDistance;
+	public float amountOfCoyoteTime;
 	
 	private Vector3 moveDir;
 	private Rigidbody rb;
 	private bool grounded = true;
+	private float lastGroundedTime;
+	private bool hasJumped;
 	
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
@@ -32,11 +35,17 @@ public class PlayerController : MonoBehaviour
 
 		// Get grounded
 		grounded = Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, groundedDistance);
-		
+		if (grounded)
+		{
+			lastGroundedTime = Time.time;
+			hasJumped = false;
+		}
+
 		// Get jump
-		if (grounded && Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKeyDown(KeyCode.Space) && amountOfCoyoteTime < Time.time - lastGroundedTime && !hasJumped)
 		{
 			rb.AddForce(0, jumpStrength, 0);
+			hasJumped = true;
 		};
 	}
 
