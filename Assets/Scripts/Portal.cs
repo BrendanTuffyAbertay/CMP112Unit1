@@ -8,7 +8,7 @@ public class Portal : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag ("Player"))
+        if (collision.gameObject.CompareTag ("Player") || collision.gameObject.CompareTag("Player2"))
         {   
            
             collision.gameObject.transform.position = new Vector3(PosX, PosY, PosZ);

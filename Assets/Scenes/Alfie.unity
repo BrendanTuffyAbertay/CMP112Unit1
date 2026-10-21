@@ -316,6 +316,7 @@ GameObject:
   - component: {fileID: 898240779}
   - component: {fileID: 898240778}
   - component: {fileID: 898240777}
+  - component: {fileID: 898240781}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -416,6 +417,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &898240781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898240776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b40185b6e952364ca22dd2d6d79befa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneTransfer
+  sceneName: Sample Scene
 --- !u!1001 &1052534236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -430,7 +444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 297440772623482048, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Player2
       objectReference: {fileID: 0}
     - target: {fileID: 5593154132613146469, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: m_LocalPosition.x
@@ -766,7 +780,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1798557973}
   - component: {fileID: 1798557972}
-  - component: {fileID: 1798557971}
   - component: {fileID: 1798557974}
   m_Layer: 0
   m_Name: Main Camera
@@ -775,14 +788,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1798557971
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798557970}
-  m_Enabled: 1
 --- !u!20 &1798557972
 Camera:
   m_ObjectHideFlags: 0
