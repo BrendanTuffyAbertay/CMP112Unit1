@@ -4,10 +4,12 @@ public class PlayerController : MonoBehaviour
 {
 	public float moveSpeed;
 	public float jumpStrength;
+	public float groundedDistance;
 	
 	private Vector3 moveDir;
 	private Rigidbody rb;
-	private bool jumping = false;
+	private bool grounded = true;
+	
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
 	{
@@ -23,8 +25,12 @@ public class PlayerController : MonoBehaviour
 			moveDir.Normalize();
 		}
 		
+		// Get grounded
+		grounded = Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, groundedDistance);
+		Debug.Log(grounded);
+		
 		// Get jump
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (grounded && Input.GetKeyDown(KeyCode.Space))
 		{
 			rb.AddForce(0, jumpStrength, 0);
 		};
