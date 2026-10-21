@@ -28,11 +28,11 @@ public class PlayerController : MonoBehaviour
 		}
 		if (Input.GetKey(KeyCode.A))
 		{
-			moveDir += new Vector3(0, 0, -1);
+			moveDir += new Vector3(0, 0, 1);
 		}
 		if (Input.GetKey(KeyCode.D))
 		{
-			moveDir += new Vector3(0, 0, 1);
+			moveDir += new Vector3(0, 0, -1);
 		}
 		if (moveDir.magnitude > 0)
 		{
