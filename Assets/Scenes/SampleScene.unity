@@ -491,7 +491,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 1, z: 5}
+  m_LocalScale: {x: 5, y: 1, z: 8000}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -561,10 +561,6 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 330585545}
-    - target: {fileID: 5174917894557974998, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
-      propertyPath: groundedDistance
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5593154132613146469, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
