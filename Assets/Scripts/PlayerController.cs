@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 	void Update()
 	{
 		// Get move dir
-		moveDir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+		moveDir = new Vector3(Input.GetAxis("Vertical"), 0, -Input.GetAxis("Horizontal"));
 		if (moveDir.magnitude > 0)
 		{
 			moveDir.Normalize();
@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
 		
 		// Get grounded
 		grounded = Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, groundedDistance);
-		Debug.Log(grounded);
 		
 		// Get jump
 		if (grounded && Input.GetKeyDown(KeyCode.Space))
