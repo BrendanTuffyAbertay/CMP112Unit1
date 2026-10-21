@@ -24,7 +24,12 @@ public class PlayerController : MonoBehaviour
 		{
 			moveDir.Normalize();
 		}
-		
+		else
+		{
+			// Go towards zero
+			moveDir = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z).normalized * - 1;
+		}
+
 		// Get grounded
 		grounded = Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, groundedDistance);
 		
