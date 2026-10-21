@@ -429,7 +429,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b40185b6e952364ca22dd2d6d79befa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransfer
-  sceneName: Sample Scene
+  sceneName: SampleScene
+  player1: 0
+  player2: 0
 --- !u!1001 &1052534236
 PrefabInstance:
   m_ObjectHideFlags: 0
