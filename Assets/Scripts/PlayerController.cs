@@ -1,3 +1,5 @@
+using System;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -31,11 +33,14 @@ public class PlayerController : MonoBehaviour
 		if (moveDir.magnitude > 0)
 		{
 			moveDir.Normalize();
+			
+			// Aim
+			transform.rotation = Quaternion.Euler(0, ((float)Math.Atan2(moveDir.x, moveDir.z) * Mathf.Rad2Deg + 90) * -1, 0);
 		}
 		else
 		{
 			// Go towards zero
-			moveDir = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z).normalized * - 1;
+			moveDir = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z).normalized * -1;
 		}
 
 		// Get grounded
@@ -68,6 +73,5 @@ public class PlayerController : MonoBehaviour
 		{
 			rb.AddForce(-attemptedMove);
 		}
-		
 	}
 }
