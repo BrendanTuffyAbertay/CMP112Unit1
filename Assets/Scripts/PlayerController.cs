@@ -7,6 +7,9 @@ public class PlayerController : MonoBehaviour
 	public float groundedDistance;
 	public float amountOfCoyoteTime;
 	public float maxSpeed;
+
+	public string horizontalAxisName = "Horizontal";
+	public string verticalAxisName = "Vertical";
 	
 	private Vector3 moveDir;
 	private Rigidbody rb;
@@ -24,7 +27,7 @@ public class PlayerController : MonoBehaviour
 	void Update()
 	{
 		// Get move dir
-		moveDir = new Vector3(Input.GetAxis("Vertical"), 0, -Input.GetAxis("Horizontal"));
+		moveDir = new Vector3(Input.GetAxis(verticalAxisName), 0, -Input.GetAxis(horizontalAxisName));
 		if (moveDir.magnitude > 0)
 		{
 			moveDir.Normalize();

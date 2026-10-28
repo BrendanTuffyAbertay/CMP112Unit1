@@ -276,6 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44fcecb4b69717146b58baf334019f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController2
+  rb: {fileID: 0}
   speed: 5
   jumpspeed: 8
   gravity: 20
@@ -296,6 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e2d2d553298cf4a8ad76f01a71ea49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController3
+  rb: {fileID: 0}
   speed1: 5
   jumpspeed1: 8
   gravity1: 20
@@ -447,6 +449,14 @@ PrefabInstance:
     - target: {fileID: 297440772623482048, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: m_TagString
       value: Player2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5174917894557974998, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
+      propertyPath: verticalAxisName
+      value: Vertical1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5174917894557974998, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
+      propertyPath: horizontalAxisName
+      value: Horizontal1
       objectReference: {fileID: 0}
     - target: {fileID: 5593154132613146469, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1170,6 +1180,14 @@ PrefabInstance:
     - target: {fileID: 297440772623482048, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5174917894557974998, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
+      propertyPath: verticalAxisName
+      value: Vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 5174917894557974998, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
+      propertyPath: horizontalAxisName
+      value: Horizontal
       objectReference: {fileID: 0}
     - target: {fileID: 5593154132613146469, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: m_LocalPosition.x
