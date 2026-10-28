@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   cam: {fileID: 0}
-  offset: {x: -20, y: 15, z: 0}
+  offset: {x: 20, y: 15, z: 0}
 --- !u!114 &5174917894557974998
 MonoBehaviour:
   m_ObjectHideFlags: 0

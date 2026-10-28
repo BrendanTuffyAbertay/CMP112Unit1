@@ -29,13 +29,14 @@ public class PlayerController : MonoBehaviour
 	void Update()
 	{
 		// Get move dir
-		moveDir = new Vector3(Input.GetAxis(verticalAxisName), 0, -Input.GetAxis(horizontalAxisName));
+		moveDir = new Vector3(-Input.GetAxis(verticalAxisName), 0, Input.GetAxis(horizontalAxisName));
 		if (moveDir.magnitude > 0)
 		{
 			moveDir.Normalize();
 			
 			// Aim
-			transform.rotation = Quaternion.Euler(0, ((float)Math.Atan2(moveDir.x, -moveDir.z) * Mathf.Rad2Deg) * -1 + 90, 0);
+			Debug.Log("Doohickey");
+			transform.rotation = Quaternion.Euler(0, ((float)Math.Atan2(moveDir.x, -moveDir.z) * -1 * Mathf.Rad2Deg) + 90, 0);
 		}
 		else
 		{
