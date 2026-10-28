@@ -35,7 +35,6 @@ public class PlayerController : MonoBehaviour
 			moveDir.Normalize();
 			
 			// Aim
-			Debug.Log("Doohickey");
 			transform.rotation = Quaternion.Euler(0, ((float)Math.Atan2(moveDir.x, -moveDir.z) * -1 * Mathf.Rad2Deg) + 90, 0);
 		}
 		else
