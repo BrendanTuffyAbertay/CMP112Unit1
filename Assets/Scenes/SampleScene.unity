@@ -383,24 +383,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!1 &508322794 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 297440772623482048, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
-  m_PrefabInstance: {fileID: 6256149786592993133}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &508322800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 508322794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e10938d579fac6b47b24cd12ca6ac7a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  moveSpeed: 0
 --- !u!1 &658042924
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,7 +491,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 1, z: 5}
+  m_LocalScale: {x: 5, y: 1, z: 8000}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -575,6 +557,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1168163046736654371, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 330585545}
     - target: {fileID: 5593154132613146469, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -618,10 +604,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 297440772623482048, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 508322800}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
