@@ -8,9 +8,12 @@ public class MovingPlatform : MonoBehaviour
     public int rangeY = 0;
     public int rangeZ = 0;
     public int speed = 5;
-    private Vector3 positionA;
-    private Vector3 positionB;
-    private bool MovetoA = true;
+    public Vector3 positionA;
+    public Vector3 positionB;
+    public bool MovetoA = true;
+
+    public GameObject player1;
+    public GameObject player2;
 
     void Start()
     {
@@ -40,4 +43,36 @@ public class MovingPlatform : MonoBehaviour
         }
 
     }
+
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            player1.transform.parent = this.gameObject.transform;
+        }
+        if (collision.gameObject.CompareTag("Player2"))
+        {
+            player2.transform.parent = this.gameObject.transform;
+        }
+
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            player1.transform.parent = null;
+        }
+        if (collision.gameObject.CompareTag("Player2"))
+        {
+            player2.transform.parent = null;
+        }
+
+    }
+
 }
