@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 			moveDir.Normalize();
 			
 			// Aim
-			transform.rotation = Quaternion.Euler(0, ((float)Math.Atan2(moveDir.x, moveDir.z) * Mathf.Rad2Deg + 90) * -1, 0);
+			transform.rotation = Quaternion.Euler(0, ((float)Math.Atan2(moveDir.x, -moveDir.z) * Mathf.Rad2Deg) * -1 + 90, 0);
 		}
 		else
 		{
