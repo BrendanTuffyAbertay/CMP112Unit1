@@ -125,4 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef74ca0e4c130824093124fdc488de2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletFly
+  moveDir: {x: 0, y: 0, z: 0}
   speed: 50
+  lifespan: 3

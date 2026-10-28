@@ -3,7 +3,6 @@ using UnityEngine;
 public class PlayerShooting : MonoBehaviour
 {
 	public GameObject bulletPrefab;    
-    private Rigidbody rb;
     public float RPM;
 
     private double timeOfLastShot;
@@ -11,7 +10,6 @@ public class PlayerShooting : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
         timeOfLastShot = Time.time;
         // Calculate seconds between shots from RPM
         secondsBetweenShots = 1 / (RPM / 60f);
