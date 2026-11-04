@@ -1385,15 +1385,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player2
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-    - target: {fileID: 1168163046736654371, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5174917894557974998, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-=======
     - target: {fileID: 5174917894557974998, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: verticalAxisName
       value: Vertical1
@@ -1401,7 +1392,6 @@ PrefabInstance:
     - target: {fileID: 5174917894557974998, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: horizontalAxisName
       value: Horizontal1
->>>>>>> main
       objectReference: {fileID: 0}
     - target: {fileID: 5593154132613146469, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2893,7 +2883,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 1168163046736654371, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2901,7 +2890,6 @@ PrefabInstance:
     - target: {fileID: 5174917894557974998, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: m_Enabled
       value: 0
-=======
     - target: {fileID: 5174917894557974998, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: verticalAxisName
       value: Vertical
@@ -2909,7 +2897,6 @@ PrefabInstance:
     - target: {fileID: 5174917894557974998, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: horizontalAxisName
       value: Horizontal
->>>>>>> main
       objectReference: {fileID: 0}
     - target: {fileID: 5593154132613146469, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: m_LocalPosition.x
