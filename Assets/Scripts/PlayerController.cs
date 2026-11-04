@@ -1,3 +1,5 @@
+using System;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,6 +9,9 @@ public class PlayerController : MonoBehaviour
 	public float groundedDistance;
 	public float amountOfCoyoteTime;
 	public float maxSpeed;
+
+	public string horizontalAxisName = "Horizontal";
+	public string verticalAxisName = "Vertical";
 	
 	private Vector3 moveDir;
 	private Rigidbody rb;
@@ -24,15 +29,18 @@ public class PlayerController : MonoBehaviour
 	void Update()
 	{
 		// Get move dir
-		moveDir = new Vector3(Input.GetAxis("Vertical"), 0, -Input.GetAxis("Horizontal"));
+		moveDir = new Vector3(-Input.GetAxis(verticalAxisName), 0, Input.GetAxis(horizontalAxisName));
 		if (moveDir.magnitude > 0)
 		{
 			moveDir.Normalize();
+			
+			// Aim
+			transform.rotation = Quaternion.Euler(0, ((float)Math.Atan2(moveDir.x, moveDir.z) * Mathf.Rad2Deg), 0);
 		}
 		else
 		{
 			// Go towards zero
-			moveDir = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z).normalized * - 1;
+			moveDir = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z).normalized * -1;
 		}
 
 		// Get grounded
@@ -65,6 +73,5 @@ public class PlayerController : MonoBehaviour
 		{
 			rb.AddForce(-attemptedMove);
 		}
-		
 	}
 }
