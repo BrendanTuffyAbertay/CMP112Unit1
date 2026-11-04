@@ -4,6 +4,7 @@ public class PlayerShooting : MonoBehaviour
 {
 	public GameObject bulletPrefab;	
 	public float RPM;
+	public KeyCode shootKey = KeyCode.LeftShift;
 
 	private double timeOfLastShot;
 	private float secondsBetweenShots;
@@ -23,7 +24,7 @@ public class PlayerShooting : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (Input.GetButton("Fire1") && Time.time > timeOfLastShot + secondsBetweenShots)
+		if (Input.GetKey(shootKey) && Time.time > timeOfLastShot + secondsBetweenShots)
 		{
 			timeOfLastShot = Time.time;
 			GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
