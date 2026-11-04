@@ -28,8 +28,8 @@ public class Damageable : MonoBehaviour
 	// Die
 	void Die()
 	{
-		// Placeholder
-		Debug.Log("Dead");
+		// Destroy object
+		Object.Destroy(gameObject);
 	}
 	
 	void Start()
