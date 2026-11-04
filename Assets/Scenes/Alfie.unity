@@ -556,10 +556,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44fcecb4b69717146b58baf334019f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController2
-  rb: {fileID: 0}
-  speed: 5
-  jumpspeed: 8
-  gravity: 20
 --- !u!1 &660807991
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,10 +836,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e2d2d553298cf4a8ad76f01a71ea49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController3
-  rb: {fileID: 0}
-  speed1: 5
-  jumpspeed1: 8
-  gravity1: 20
 --- !u!4 &810999445 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5593154132613146469, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
@@ -1267,10 +1259,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1acc360f9260904aad5f7fb4bbc8530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUps
+  scriptManager: {fileID: 2057239709}
   dmg: 0
   attackSpeed: 0
   speed: 0
+  healAmount: 20
   powerupText: Powered up
+  powerupSmallText: 
   duration: 3
   P1bText: {fileID: 1347175645}
   P1sText: {fileID: 741835011}
@@ -1385,6 +1380,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player2
       objectReference: {fileID: 0}
+    - target: {fileID: 1168163046736654371, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1247713310}
     - target: {fileID: 5174917894557974998, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: verticalAxisName
       value: Vertical1
@@ -2884,12 +2883,17 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1168163046736654371, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1798557972}
+    - target: {fileID: 1168163046736654371, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5174917894557974998, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5174917894557974998, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: verticalAxisName
       value: Vertical
