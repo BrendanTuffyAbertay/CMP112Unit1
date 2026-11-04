@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class Damageable : MonoBehaviour
 {
-	public float health;
+	private float health;
 	public float maxHealth;
 	public string team;
 	
 	// Damage
-	void Damage(float amount, string sourceTeam)
+	public void Damage(float amount, string sourceTeam)
 	{
 		// Check the attack isn't actually a heal
 		if (amount < 0) return;
