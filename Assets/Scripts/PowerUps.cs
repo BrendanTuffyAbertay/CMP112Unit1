@@ -2,16 +2,20 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections;
-using System.Diagnostics;
-
+//using System.Diagnostics;
 
 public class PowerUps : MonoBehaviour
 {
-    
+    public GameObject scriptManager;
+    private Ui Ui;
+
     public int dmg;
     public int attackSpeed;
     public int speed;
+    public int healAmount;
+
     public string powerupText;
+    public string powerupSmallText;
 
     public int duration;
 
@@ -20,7 +24,11 @@ public class PowerUps : MonoBehaviour
 
     public TextMeshProUGUI P2bText;
     public TextMeshProUGUI P2sText;
-    
+
+    private void Start()
+    {
+        Ui = scriptManager.GetComponent<Ui>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -28,18 +36,53 @@ public class PowerUps : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
+            // healing
             P1bText.text = powerupText;
-            StartCoroutine(PowerUpWareOff());
+            P1sText.text = powerupSmallText;
+            Ui.health1 += healAmount;
+            Ui.P1hBar.value = Ui.health1;
+
+            // dmg
+
+            // attack speed
+
+            // speed
+
+            StartCoroutine(PowerUpWareOff1());
+
+            gameObject.transform.Translate(0, -10, 0);
         }
         if (collision.gameObject.CompareTag("Player2"))
         {
-            
+            // healing
+            P2bText.text = powerupText;
+            P2sText.text = powerupSmallText;
+            Ui.health2 += healAmount;
+            Ui.P2hBar.value = Ui.health2;
+
+            // dmg
+
+            // attack speed
+
+            // speed
+
+            StartCoroutine(PowerUpWareOff2());
+
+            gameObject.transform.Translate(0, -10, 0);
         }
 
-        IEnumerator PowerUpWareOff()
+        IEnumerator PowerUpWareOff1()
         {
             yield return new WaitForSeconds(duration);
             P1bText.text = "";
+            P1sText.text = "";
+        }
+
+        IEnumerator PowerUpWareOff2()
+        {
+            yield return new WaitForSeconds(duration);
+            P2bText.text = "";
+            P2sText.text = "";
         }
 
     }

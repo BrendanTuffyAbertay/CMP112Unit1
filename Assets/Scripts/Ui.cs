@@ -8,6 +8,9 @@ public class Ui : MonoBehaviour
     public int health1 = 100;
     public int health2 = 100;
 
+    public GameObject player1;
+    public GameObject player2;
+
     public Slider P1hBar;
     public TextMeshProUGUI P1bText;
     public TextMeshProUGUI P1sText;
@@ -50,10 +53,12 @@ public class Ui : MonoBehaviour
         if(health1 == 0)
         {
             P1bText.text = "You Died";
+            Destroy(player1);
         }
         if(health2 == 0)
         {
             P2bText.text = "You Died";
+            Destroy(player2);
         }
     }
 }
