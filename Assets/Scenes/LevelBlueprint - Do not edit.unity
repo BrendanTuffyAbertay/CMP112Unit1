@@ -1045,6 +1045,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5174917894557974998, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
+      propertyPath: jumpKey
+      value: 305
+      objectReference: {fileID: 0}
+    - target: {fileID: 5174917894557974998, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -2876,10 +2880,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac87f80f1f1820449d4b33dea7fb195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ui
-  Player1: {fileID: 0}
-  Player2: {fileID: 0}
-  health1: 100
-  health2: 100
   player1: {fileID: 977359943}
   player2: {fileID: 728463486}
   P1hBar: {fileID: 1937749067}
