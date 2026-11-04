@@ -4,8 +4,12 @@ using Object = UnityEngine.Object;
 
 public class DamageOnCollide : MonoBehaviour
 {
-	public GameObject owner;
 	public float damage;
+	
+	[HideInInspector]
+	public GameObject owner;
+	
+	[HideInInspector]
 	public string team;
 	
 	// Hit something

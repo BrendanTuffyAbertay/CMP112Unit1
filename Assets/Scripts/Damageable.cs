@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class Damageable : MonoBehaviour
 {
-	private float health;
 	public float maxHealth;
 	public string team;
+	
+	[HideInInspector]
+	public float health;
 	
 	// Damage
 	public void Damage(float amount, string sourceTeam)

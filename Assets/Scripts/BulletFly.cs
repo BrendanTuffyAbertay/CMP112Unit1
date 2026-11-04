@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class BulletFly : MonoBehaviour
 {
+	[HideInInspector]
     public Vector3 moveDir;
     public float speed;
     public float lifespan;
