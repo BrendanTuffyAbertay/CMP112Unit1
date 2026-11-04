@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7819341634924677576}
   - component: {fileID: 4222365749091808506}
   - component: {fileID: 7573528274909532916}
+  - component: {fileID: -5180409579593744440}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -128,3 +129,18 @@ MonoBehaviour:
   moveDir: {x: 0, y: 0, z: 0}
   speed: 50
   lifespan: 3
+--- !u!114 &-5180409579593744440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6351290908510528034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0914527c0c33b2542909ffe49cc38c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageOnCollide
+  owner: {fileID: 0}
+  damage: 10
+  team: 

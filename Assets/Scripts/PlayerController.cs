@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
 	public string horizontalAxisName = "Horizontal";
 	public string verticalAxisName = "Vertical";
+	public KeyCode jumpKey = KeyCode.Space;
 	
 	private Vector3 moveDir;
 	private Rigidbody rb;
@@ -53,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
 		// Get jump
 		if (
-			Input.GetKeyDown(KeyCode.Space) &&
+			Input.GetKeyDown(jumpKey) &&
 			amountOfCoyoteTime > Time.time - lastGroundedTime && 
 			!hasJumped
 		) {
