@@ -26,11 +26,11 @@ public class PlayerShooting : MonoBehaviour
 	void Update()
 	{
 		if (
-			(Input.GetKey(shootKey) && !semiAutomatic) || Input.GetKeyDown(shootKey) // Either holding down for full-auto, or when pressed for semi-auto
+			((Input.GetKey(shootKey) && !semiAutomatic) || Input.GetKeyDown(shootKey)) // Either holding down for full-auto, or when pressed for semi-auto
 			&& Time.time > timeOfNextShot
 		)
 		{
-			timeOfNextShot = Time.time + 1 / (RPM / 60f);;
+			timeOfNextShot = Time.time + 1 / (RPM / 60f);
 			GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
 			DamageOnCollide bulletDamage = bullet.GetComponent<DamageOnCollide>();
 			bulletDamage.team = damageableData.team;

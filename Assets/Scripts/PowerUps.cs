@@ -6,86 +6,76 @@ using System.Collections;
 
 public class PowerUps : MonoBehaviour
 {
-    public GameObject scriptManager;
-    private Ui Ui;
+	public GameObject scriptManager;
+	public int dmg;
+	public int attackSpeed;
+	public int speed;
+	public int healAmount;
 
-    public int dmg;
-    public int attackSpeed;
-    public int speed;
-    public int healAmount;
+	public string powerupText;
+	public string powerupSmallText;
 
-    public string powerupText;
-    public string powerupSmallText;
+	public int duration;
 
-    public int duration;
+	public TextMeshProUGUI P1bText;
+	public TextMeshProUGUI P1sText;
 
-    public TextMeshProUGUI P1bText;
-    public TextMeshProUGUI P1sText;
+	public TextMeshProUGUI P2bText;
+	public TextMeshProUGUI P2sText;
 
-    public TextMeshProUGUI P2bText;
-    public TextMeshProUGUI P2sText;
+	private void OnCollisionEnter(Collision collision)
+	{
+		
 
-    private void Start()
-    {
-        Ui = scriptManager.GetComponent<Ui>();
-    }
+		if (collision.gameObject.CompareTag("Player"))
+		{
+			// healing
+			P1bText.text = powerupText;
+			P1sText.text = powerupSmallText;
+			collision.gameObject.GetComponent<Damageable>().Heal(healAmount, true);
+			// dmg
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        
+			// attack speed
 
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            // healing
-            P1bText.text = powerupText;
-            P1sText.text = powerupSmallText;
-            Ui.health1 += healAmount;
-            Ui.P1hBar.value = Ui.health1;
+			// speed
 
-            // dmg
+			StartCoroutine(PowerUpWareOff1());
 
-            // attack speed
+			gameObject.transform.Translate(0, -10, 0);
+		}
+		if (collision.gameObject.CompareTag("Player2"))
+		{
+			// healing
+			P2bText.text = powerupText;
+			P2sText.text = powerupSmallText;
+			collision.gameObject.GetComponent<Damageable>().Heal(healAmount, true);
 
-            // speed
+			// dmg
 
-            StartCoroutine(PowerUpWareOff1());
+			// attack speed
 
-            gameObject.transform.Translate(0, -10, 0);
-        }
-        if (collision.gameObject.CompareTag("Player2"))
-        {
-            // healing
-            P2bText.text = powerupText;
-            P2sText.text = powerupSmallText;
-            Ui.health2 += healAmount;
-            Ui.P2hBar.value = Ui.health2;
+			// speed
 
-            // dmg
+			StartCoroutine(PowerUpWareOff2());
 
-            // attack speed
+			gameObject.transform.Translate(0, -10, 0);
+		}
 
-            // speed
+		IEnumerator PowerUpWareOff1()
+		{
+			yield return new WaitForSeconds(duration);
+			P1bText.text = "";
+			P1sText.text = "";
+		}
 
-            StartCoroutine(PowerUpWareOff2());
+		IEnumerator PowerUpWareOff2()
+		{
+			yield return new WaitForSeconds(duration);
+			P2bText.text = "";
+			P2sText.text = "";
+		}
 
-            gameObject.transform.Translate(0, -10, 0);
-        }
-
-        IEnumerator PowerUpWareOff1()
-        {
-            yield return new WaitForSeconds(duration);
-            P1bText.text = "";
-            P1sText.text = "";
-        }
-
-        IEnumerator PowerUpWareOff2()
-        {
-            yield return new WaitForSeconds(duration);
-            P2bText.text = "";
-            P2sText.text = "";
-        }
-
-    }
+	}
 
 
 }
