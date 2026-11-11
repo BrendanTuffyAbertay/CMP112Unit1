@@ -40,8 +40,10 @@ public class PowerUps : MonoBehaviour
 
 		if (collision.gameObject.CompareTag("Player")) // if p1 collects powerup
 		{
-			// healing
-			P1bText.text = powerupText;
+            source.PlayOneShot(sound, 1.0f);
+
+            // healing
+            P1bText.text = powerupText;
 			P1sText.text = powerupSmallText;
 			collision.gameObject.GetComponent<Damageable>().Heal(healAmount, true);
             // dmg
@@ -51,8 +53,6 @@ public class PowerUps : MonoBehaviour
             // speed
             collision.gameObject.GetComponent<PlayerController>().maxSpeed += speed;
             collision.gameObject.GetComponent<PlayerController>().acceleration += accelleration;
-
-            source.PlayOneShot(sound, 1.0f);
             
             StartCoroutine(PowerUpWareOff1());
 
@@ -63,8 +63,10 @@ public class PowerUps : MonoBehaviour
         }
 		if (collision.gameObject.CompareTag("Player2")) // if p2 collects powerup
 		{
-			// healing
-			P2bText.text = powerupText;
+            source.PlayOneShot(sound, 1.0f);
+
+            // healing
+            P2bText.text = powerupText;
 			P2sText.text = powerupSmallText;
 			collision.gameObject.GetComponent<Damageable>().Heal(healAmount, true);
 

@@ -835,7 +835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b40185b6e952364ca22dd2d6d79befa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransfer
-  sceneName: LevelBlueprint - Do not edit
+  sceneName: MapB
   player1: 0
   player2: 0
 --- !u!65 &749631457

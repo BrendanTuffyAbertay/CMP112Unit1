@@ -24,6 +24,19 @@ public class BulletFly : MonoBehaviour
         
         // Go forward
         transform.position += transform.forward * speed * Time.deltaTime;
+
+
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("wall"))
+        {
+            Debug.Log("Hit wall");
+            Destroy(gameObject);
+        }
+    }
+
+
 }
     
