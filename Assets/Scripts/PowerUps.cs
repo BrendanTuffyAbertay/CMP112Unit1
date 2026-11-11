@@ -38,7 +38,7 @@ public class PowerUps : MonoBehaviour
             // dmg
             //collision.gameObject.GetComponent<PlayerShooting>().variable += dmg;
             // attack speed
-            collision.gameObject.GetComponent<PlayerShooting>().RPM += attackSpeed;
+            collision.gameObject.GetComponent<PlayerShooting>().gunData.RPM += attackSpeed;
             // speed
             collision.gameObject.GetComponent<PlayerController>().maxSpeed += speed;
             collision.gameObject.GetComponent<PlayerController>().acceleration += accelleration;
@@ -60,7 +60,7 @@ public class PowerUps : MonoBehaviour
             // dmg
             //collision.gameObject.GetComponent<PlayerShooting>().variable += dmg;
             // attack speed
-            collision.gameObject.GetComponent<PlayerShooting>().RPM += attackSpeed;
+            collision.gameObject.GetComponent<PlayerShooting>().gunData.RPM += attackSpeed;
             // speed
             collision.gameObject.GetComponent<PlayerController>().maxSpeed += speed;
             collision.gameObject.GetComponent<PlayerController>().acceleration += accelleration;
@@ -81,7 +81,7 @@ public class PowerUps : MonoBehaviour
 			P1bText.text = "";
 			P1sText.text = "";
             // reset power ups back to default value below:
-            collision.gameObject.GetComponent<PlayerShooting>().RPM -= attackSpeed;
+            collision.gameObject.GetComponent<PlayerShooting>().gunData.RPM -= attackSpeed;
             //collision.gameObject.GetComponent<PlayerShooting>().variable -= dmg;
             collision.gameObject.GetComponent<PlayerController>().maxSpeed -= speed;
             collision.gameObject.GetComponent<PlayerController>().acceleration -= accelleration;
@@ -93,7 +93,7 @@ public class PowerUps : MonoBehaviour
 			P2bText.text = "";
 			P2sText.text = "";
             // reset power ups back to default value below:
-            collision.gameObject.GetComponent<PlayerShooting>().RPM -= attackSpeed;
+            collision.gameObject.GetComponent<PlayerShooting>().gunData.RPM -= attackSpeed;
             //collision.gameObject.GetComponent<PlayerShooting>().variable -= dmg;
             collision.gameObject.GetComponent<PlayerController>().maxSpeed -= speed;
             collision.gameObject.GetComponent<PlayerController>().acceleration -= accelleration;
