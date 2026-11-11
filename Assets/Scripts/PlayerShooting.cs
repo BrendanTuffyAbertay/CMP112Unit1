@@ -7,7 +7,7 @@ public class PlayerShooting : MonoBehaviour
 	public KeyCode shootKey = KeyCode.LeftShift;
 	
 	// GUN DATA
-	[NonSerialized] public GunData gunData;
+	[NonSerialized] public GunData gunData = new GunData_Rifle();
 	
 	private double timeOfNextShot;
 	private Damageable damageableData;
