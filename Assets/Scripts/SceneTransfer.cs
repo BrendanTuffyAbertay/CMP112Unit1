@@ -27,6 +27,7 @@ public class SceneTransfer : MonoBehaviour
         {
             if (player2)
             {
+                Debug.Log("works");
                 SceneManager.LoadScene(sceneName);
             }
         }

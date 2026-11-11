@@ -11,5 +11,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Alfie.unity
     guid: c39e0826aa5fabb4590d32fc59710ed0
+  - enabled: 1
+    path: Assets/Scenes/hubWorld.unity
+    guid: fbf8d6ca1ccb65645a8b9e24e4a630eb
+  - enabled: 1
+    path: Assets/Scenes/LevelBlueprint - Do not edit.unity
+    guid: b9e075ca0b7083d44ace875f0741e1c2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
