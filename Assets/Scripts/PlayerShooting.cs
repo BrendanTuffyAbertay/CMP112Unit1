@@ -9,6 +9,7 @@ public class PlayerShooting : MonoBehaviour
 	// REMEMBER TO TRY DE-HARDCODE THIS SOME TIME
 	public float RPM; // Rounds per minute
 	public bool semiAutomatic; // If true, each trigger pull only fires one shot
+	public float bulletDamage; // Damage per shot
 
 	private double timeOfNextShot;
 	private Damageable damageableData;
@@ -22,6 +23,16 @@ public class PlayerShooting : MonoBehaviour
 		damageableData = gameObject.GetComponent<Damageable>();
 	}
 	
+	// Actually shoots a bullet
+	void ShootBullet()
+	{
+		GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+		DamageOnCollide bulletData = bullet.GetComponent<DamageOnCollide>();
+		bulletData.team = damageableData.team;
+		bulletData.owner = gameObject;
+		bulletData.damage = bulletDamage;
+	}
+	
 	// Update is called once per frame
 	void Update()
 	{
@@ -31,10 +42,7 @@ public class PlayerShooting : MonoBehaviour
 		)
 		{
 			timeOfNextShot = Time.time + 1 / (RPM / 60f);
-			GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-			DamageOnCollide bulletDamage = bullet.GetComponent<DamageOnCollide>();
-			bulletDamage.team = damageableData.team;
-			bulletDamage.owner = gameObject;
+			ShootBullet();
 		}
 	}
 }
