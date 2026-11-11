@@ -990,6 +990,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 456712761}
+    - target: {fileID: 4531113028825074464, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
+      propertyPath: team
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5174917894557974998, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: verticalAxisName
       value: Vertical1
@@ -1154,6 +1158,10 @@ PrefabInstance:
       objectReference: {fileID: 930888078}
     - target: {fileID: 1168163046736654371, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4531113028825074464, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
+      propertyPath: team
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5174917894557974998, guid: e5cf9faafd03e7242b263336a9751f89, type: 3}
