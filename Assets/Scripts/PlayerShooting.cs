@@ -10,7 +10,11 @@ public class PlayerShooting : MonoBehaviour
 	public float RPM; // Rounds per minute
 	public bool semiAutomatic; // If true, each trigger pull only fires one shot
 	public float bulletDamage; // Damage per shot
-
+	
+	// Shotgun data
+	public uint pelletsPerShot = 1; // Number of projectiles fired per fire action.
+	public float shotgunSpread = 45; // If this gun is a shotgun, fires the pellets in an arc of this many degrees
+	
 	private double timeOfNextShot;
 	private Damageable damageableData;
 	
@@ -24,9 +28,9 @@ public class PlayerShooting : MonoBehaviour
 	}
 	
 	// Actually shoots a bullet
-	void ShootBullet()
+	void ShootBullet(float angleOffset)
 	{
-		GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+		GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, angleOffset, 0)));
 		DamageOnCollide bulletData = bullet.GetComponent<DamageOnCollide>();
 		bulletData.team = damageableData.team;
 		bulletData.owner = gameObject;
@@ -42,7 +46,23 @@ public class PlayerShooting : MonoBehaviour
 		)
 		{
 			timeOfNextShot = Time.time + 1 / (RPM / 60f);
-			ShootBullet();
+			
+			// If 1 pellet per shot, just shoot once
+			if (pelletsPerShot == 1)
+			{
+				ShootBullet(0);	
+			}
+			
+			// If multiple pellets per shot, shoot multiple times
+			else
+			{
+				var currentSpread = shotgunSpread / 2;
+				for (int i = 0; i < pelletsPerShot; i++)
+				{
+					ShootBullet(currentSpread);
+					currentSpread -= shotgunSpread / (pelletsPerShot - 1);
+				}
+			}
 		}
 	}
 }
