@@ -25,7 +25,16 @@ public class PowerUps : MonoBehaviour
 	public TextMeshProUGUI P2bText;
 	public TextMeshProUGUI P2sText;
 
-	private void OnCollisionEnter(Collision collision)
+    private AudioSource source;
+    public AudioClip sound;
+
+    private void Start()
+    {
+        // add an audio source
+        source = GetComponent<AudioSource>();
+    }
+
+    private void OnCollisionEnter(Collision collision)
 	{
 		
 
@@ -43,6 +52,8 @@ public class PowerUps : MonoBehaviour
             collision.gameObject.GetComponent<PlayerController>().maxSpeed += speed;
             collision.gameObject.GetComponent<PlayerController>().acceleration += accelleration;
 
+            source.PlayOneShot(sound, 1.0f);
+            
             StartCoroutine(PowerUpWareOff1());
 
 			gameObject.transform.Translate(0, -10, 0);
@@ -64,6 +75,8 @@ public class PowerUps : MonoBehaviour
             // speed
             collision.gameObject.GetComponent<PlayerController>().maxSpeed += speed;
             collision.gameObject.GetComponent<PlayerController>().acceleration += accelleration;
+
+            source.PlayOneShot(sound, 1.0f);
 
             StartCoroutine(PowerUpWareOff2());
 
