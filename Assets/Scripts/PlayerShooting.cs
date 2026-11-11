@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerShooting : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerShooting : MonoBehaviour
 	
 	private double timeOfNextShot;
 	private Damageable damageableData;
+	private AudioSource audioSource;
 	
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
@@ -19,6 +21,7 @@ public class PlayerShooting : MonoBehaviour
 		
 		// Get other components
 		damageableData = gameObject.GetComponent<Damageable>();
+		audioSource = gameObject.GetComponent<AudioSource>();
 	}
 	
 	// Actually shoots a bullet
@@ -34,6 +37,12 @@ public class PlayerShooting : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		// Check sounds generated, generate if not
+		if (!gunData.hasHadSoundsGenerated)
+		{
+			Debug.Log("Need to generate gun sounds");
+			gunData.GenerateGunSounds();
+		}
 		if (
 			((Input.GetKey(shootKey) && !gunData.semiAutomatic) || Input.GetKeyDown(shootKey)) // Either holding down for full-auto, or when pressed for semi-auto
 			&& Time.time > timeOfNextShot
@@ -57,6 +66,10 @@ public class PlayerShooting : MonoBehaviour
 					currentSpread -= gunData.shotgunSpread / (gunData.pelletsPerShot - 1);
 				}
 			}
+			
+			// Play gunshot
+			Debug.Log(gunData.gunShotSounds.Length);
+			audioSource.PlayOneShot(gunData.gunShotSounds[Random.Range(0, gunData.gunShotSounds.Length)]);
 		}
 	}
 }
