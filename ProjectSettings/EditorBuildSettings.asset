@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelBlueprint - Do not edit.unity
     guid: b9e075ca0b7083d44ace875f0741e1c2
+  - enabled: 1
+    path: Assets/Scenes/world A.unity
+    guid: e8c736e6f28451b43a9e424030054fdf
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
