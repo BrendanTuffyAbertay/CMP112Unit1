@@ -14,6 +14,7 @@ public class SceneTransfer : MonoBehaviour
     {
         
 
+        // if players touch object, set to true
         if (collision.gameObject.CompareTag("Player"))
         {
             player1 = true;
@@ -23,16 +24,17 @@ public class SceneTransfer : MonoBehaviour
             player2 = true;
         }
 
+        // if both players are touching the object, change to chosen scene
         if (player1)
         {
             if (player2)
             {
-                Debug.Log("works");
                 SceneManager.LoadScene(sceneName);
             }
         }
     }
 
+    // if players stop touching object, set to false
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))

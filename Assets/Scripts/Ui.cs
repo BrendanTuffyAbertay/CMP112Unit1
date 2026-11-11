@@ -25,6 +25,7 @@ public class Ui : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
 	{
+		// resets all ui values to default/staring
 		player1damage = player1.GetComponent<Damageable>();
 		player2damage = player2.GetComponent<Damageable>();
 		P1hBar.maxValue = player1damage.maxHealth;
@@ -46,7 +47,7 @@ public class Ui : MonoBehaviour
 		P2hBar.maxValue = player2damage.maxHealth;
 		P2hBar.value = player2damage.health;
 		
-		if( player1damage.health <= 0)
+		if( player1damage.health <= 0) // p1 dies
 		{
 			P1bText.text = "You Died";
             P2bText.text = "You Win!";
@@ -55,10 +56,10 @@ public class Ui : MonoBehaviour
 
 			if (Input.GetKeyDown(KeyCode.R))
 			{
-                SceneManager.LoadScene(sceneName);
+                SceneManager.LoadScene(sceneName); 
             }
         }
-		if( player2damage.health <= 0)
+		if( player2damage.health <= 0) // p2 dies
 		{
 			P2bText.text = "You Died";
             P1bText.text = "You Win!";
