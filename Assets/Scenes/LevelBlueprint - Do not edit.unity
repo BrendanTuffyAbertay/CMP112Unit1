@@ -2889,6 +2889,7 @@ MonoBehaviour:
   P2bText: {fileID: 65838336}
   P2sText: {fileID: 1409583747}
   dmg: 10
+  sceneName: hubWorld
 --- !u!4 &2107604612
 Transform:
   m_ObjectHideFlags: 0

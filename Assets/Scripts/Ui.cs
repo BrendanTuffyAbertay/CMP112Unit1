@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Ui : MonoBehaviour
 {
@@ -18,9 +19,11 @@ public class Ui : MonoBehaviour
 	public TextMeshProUGUI P2bText;
 	public TextMeshProUGUI P2sText;
 	public int dmg = 10;
-	
-	// Start is called once before the first execution of Update after the MonoBehaviour is created
-	void Start()
+
+    public string sceneName;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
 	{
 		player1damage = player1.GetComponent<Damageable>();
 		player2damage = player2.GetComponent<Damageable>();
@@ -46,10 +49,28 @@ public class Ui : MonoBehaviour
 		if( player1damage.health <= 0)
 		{
 			P1bText.text = "You Died";
-		}
+            P2bText.text = "You Win!";
+			P1sText.text = "Press r to return to hub";
+            P2sText.text = "Press r to return to hub";
+
+			if (Input.GetKeyDown(KeyCode.R))
+			{
+                SceneManager.LoadScene(sceneName);
+            }
+        }
 		if( player2damage.health <= 0)
 		{
-			P2bText.text = "You Died"; ;
-		}
+			P2bText.text = "You Died";
+            P1bText.text = "You Win!";
+            P1sText.text = "Press r to return to hub";
+            P2sText.text = "Press r to return to hub";
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                SceneManager.LoadScene(sceneName);
+            }
+        }
+
+
 	}
 }
