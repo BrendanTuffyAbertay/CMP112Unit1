@@ -25,7 +25,16 @@ public class PowerUps : MonoBehaviour
 	public TextMeshProUGUI P2bText;
 	public TextMeshProUGUI P2sText;
 
-	private void OnCollisionEnter(Collision collision)
+    private AudioSource source;
+    public AudioClip sound;
+
+    private void Start()
+    {
+        // add an audio source
+        source = GetComponent<AudioSource>();
+    }
+
+    private void OnCollisionEnter(Collision collision)
 	{
 		
 
@@ -38,11 +47,13 @@ public class PowerUps : MonoBehaviour
             // dmg
             //collision.gameObject.GetComponent<PlayerShooting>().variable += dmg;
             // attack speed
-            collision.gameObject.GetComponent<PlayerShooting>().RPM += attackSpeed;
+            collision.gameObject.GetComponent<PlayerShooting>().gunData.RPM += attackSpeed;
             // speed
             collision.gameObject.GetComponent<PlayerController>().maxSpeed += speed;
             collision.gameObject.GetComponent<PlayerController>().acceleration += accelleration;
 
+            source.PlayOneShot(sound, 1.0f);
+            
             StartCoroutine(PowerUpWareOff1());
 
 			gameObject.transform.Translate(0, -10, 0);
@@ -60,10 +71,12 @@ public class PowerUps : MonoBehaviour
             // dmg
             //collision.gameObject.GetComponent<PlayerShooting>().variable += dmg;
             // attack speed
-            collision.gameObject.GetComponent<PlayerShooting>().RPM += attackSpeed;
+            collision.gameObject.GetComponent<PlayerShooting>().gunData.RPM += attackSpeed;
             // speed
             collision.gameObject.GetComponent<PlayerController>().maxSpeed += speed;
             collision.gameObject.GetComponent<PlayerController>().acceleration += accelleration;
+
+            source.PlayOneShot(sound, 1.0f);
 
             StartCoroutine(PowerUpWareOff2());
 
@@ -81,7 +94,7 @@ public class PowerUps : MonoBehaviour
 			P1bText.text = "";
 			P1sText.text = "";
             // reset power ups back to default value below:
-            collision.gameObject.GetComponent<PlayerShooting>().RPM -= attackSpeed;
+            collision.gameObject.GetComponent<PlayerShooting>().gunData.RPM -= attackSpeed;
             //collision.gameObject.GetComponent<PlayerShooting>().variable -= dmg;
             collision.gameObject.GetComponent<PlayerController>().maxSpeed -= speed;
             collision.gameObject.GetComponent<PlayerController>().acceleration -= accelleration;
@@ -93,7 +106,7 @@ public class PowerUps : MonoBehaviour
 			P2bText.text = "";
 			P2sText.text = "";
             // reset power ups back to default value below:
-            collision.gameObject.GetComponent<PlayerShooting>().RPM -= attackSpeed;
+            collision.gameObject.GetComponent<PlayerShooting>().gunData.RPM -= attackSpeed;
             //collision.gameObject.GetComponent<PlayerShooting>().variable -= dmg;
             collision.gameObject.GetComponent<PlayerController>().maxSpeed -= speed;
             collision.gameObject.GetComponent<PlayerController>().acceleration -= accelleration;
