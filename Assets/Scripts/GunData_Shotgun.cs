@@ -8,6 +8,7 @@
 			semiAutomatic = true;
 			pelletsPerShot = 9;
 			shotgunSpread = 20;
+			gunshotFolder = "Sounds/Gunshot/Shotgun";
 		}
 	}
 }

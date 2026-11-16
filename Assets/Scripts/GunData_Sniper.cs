@@ -7,6 +7,7 @@
 			RPM = 60;
 			semiAutomatic = true;
 			bulletDamage = 100;
+			gunshotFolder = "Sounds/Gunshot/Sniper";
 		}
 	}
 }
